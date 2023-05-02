@@ -35,21 +35,12 @@ function register()
     }
 }
 
-function panier()
-{
-    require_once 'front/panier.php';
-}
 
 function admin_index()
 {
     require_once 'admin/index.php';
 }
 
-function admin_admins()
-{
-    $users = get_users(true);
-    require_once 'admin/admins.php';
-}
 
 function admin_categories()
 {
@@ -166,32 +157,6 @@ function admin_user_import() {
         exit();
     }
     require_once 'admin/import.php';
-}
-function add_panier($id) {
-    $product = get_products_by_id($id);
-    if (!empty($product)) {
-        if (!isset($_SESSION['cart']) || (empty($_SESSION['cart']))) {
-            $_SESSION['cart'] = [];
-            $_SESSION['cart'][$id]['quantity'] = 1;
-            $_SESSION['cart'][$id]['name'] = $product['name'];
-        } else {
-            if (isset($_SESSION['cart'][$id])) {
-                $_SESSION['cart'][$id]['quantity'] = $_SESSION['cart'][$id]['quantity']  + 1;
-            } else {
-                $_SESSION['cart'][$id]['quantity'] = 1;
-                $_SESSION['cart'][$id]['name'] = $product['name'];
-            }
-        }
-    }
-    header('Location: /index.php/panier');     
-    exit();
-}
-function del_panier($id) {
-    if (!empty($_SESSION['cart'][$id])) {
-        $_SESSION['cart'][$id]['quantity'] = 0;
-    }
-    header('Location: /index.php/panier');     
-    exit();
 }
 function pay() {
     if(!empty($_GET['paymentID']) && !empty($_GET['token']) && !empty($_GET['payerID']) && !empty($_GET['pid']) ){ 

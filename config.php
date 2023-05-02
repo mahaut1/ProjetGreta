@@ -2,7 +2,7 @@
     function db() {
         $connexion = null;
         $host = 'localhost';
-        $db_name = 'PetitesAnnonces';
+        $db_name = 'Projet_annonces';
         $username = 'root';
         $password = '';
         try{

@@ -9,19 +9,19 @@
 
         return basename($file['file']['name']);
     }
-    function get_products_by_category($id) {
+    function get_annonce_by_category($nomCategorie) {
         $connexion = db();
-        $query = "SELECT * FROM product WHERE category=" . $id;
+        $query = "SELECT * FROM annonces WHERE category=" . $id;
 	    $stmt = $connexion->prepare($query);
 	    $stmt->execute();		
         
-        $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $annonces = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 	    return $products; 
     }
-    function get_products_by_id($id) {
+    function get_annonces_by_id($id_annonce) {
         $connexion = db();
-        $query = "SELECT * FROM product WHERE id=" . $id;
+        $query = "SELECT * FROM annonces WHERE id=" . $id;
 	    $stmt = $connexion->prepare($query);
 	    $stmt->execute();		
         
@@ -29,9 +29,9 @@
 
 	    return $products; 
     }
-    function get_products() {
+    function get_annonces() {
         $connexion = db();
-        $query = "SELECT * FROM product";
+        $query = "SELECT * FROM annonces";
 	    $stmt = $connexion->prepare($query);
 	    $stmt->execute();		
         
@@ -39,15 +39,24 @@
 
 	    return $products; 
     }
-    function set_product($data, $files) {
+    function set_anonces() {
         $connexion = db();
-        $query = "INSERT INTO product SET name=:name, description=:description, price=:price, category=:category, filename=:filename";
+        $query = "INSERT INTO annonces SET date_creation=:date_creation, titre=:titre, description=:description, duree_de_publication=:duree_de_publication, prix_vente=:prix_vente, cout_annonce=:cout_annonce, date_validation=:date_validation, date_fin_publication=:date_fin_publication, id_etat=:id_etat, id_utilisateur=:id_utilisateur, date_vente:=date_vente, id_acheteur=:id_acheteur";
 
         $stmt = $connexion->prepare($query);
-        $stmt->bindParam(":name", $data['name']);
+        $stmt->bindParam(":date_creation", $data['date_creation']);
+        $stmt->bindParam(":titre", $data['titre']);
         $stmt->bindParam(":description", $data['description']);
-        $stmt->bindParam(":price", $data['price']);
-        $stmt->bindParam(":category", $data['category']);
+        $stmt->bindParam(":duree_publication", $data['duree_publication']);
+        $stmt->bindParam(":prix_vente", $data['prix_vente']);
+        $stmt->bindParam(":cout_annonce", $data['cout_annonce']);
+        $stmt->bindParam(":date_validation", $data['date_validation']);
+        $stmt->bindParam(":date_fin_publication", $data['date_fin_publication']);
+        $stmt->bindParam(":id_etat", $data['id_etat']);
+        $stmt->bindParam(":id_utilisateur", $data['id_utilisateur']);
+        $stmt->bindParam(":date_vente", $data['date_vente']);
+        $stmt->bindParam(":id_acheteur", $data['duree_publication']);
+        
 
         $filename = upload_file($files);
         $stmt->bindParam(":filename", $filename);
@@ -56,7 +65,7 @@
     }
     function get_categories() {
         $connexion = db();
-        $query = "SELECT * FROM category";
+        $query = "SELECT * FROM categories";
 	    $stmt = $connexion->prepare($query);
 	    $stmt->execute();		
         
@@ -66,10 +75,9 @@
     }
     function set_category($data) {
         $connexion = db();
-        $query = "INSERT INTO category SET name=:name";
-
+        $query = "INSERT INTO categorie SET nom_categorie=:nom_categorie, description=:description";   
         $stmt = $connexion->prepare($query);
-        $stmt->bindParam(":name", $data['name']);
+        $stmt->bindParam(":nom_categorie", $data['nom_categorie']);
         $stmt->execute();
     }
     function remove_category($id) {
@@ -97,27 +105,39 @@
     }
     function set_user($data) {
         $connexion = db();
-        $query = "INSERT INTO user SET email=:email, password=:password, admin=:admin";
+        $query = "INSERT INTO membres SET is_admin=:is_admin, username=:username, email=:email, hash=:hash, nom=:nom, prenom=:prenom, date_naissance=:date_naissance, num_telephone=:num_telephone, adresse_postale=:adresse_postale, code_postal=:code_postal, ville=:ville, date_inscription=:date_inscription, token=:token, date_validité_token=:date_validité_token, solde_cagnotte=:solde_cagnotte";
+
 
         $stmt = $connexion->prepare($query);
-        $email = $data['email'];
+        $isAdmin = $data['is_admin'];
         $password = md5($data['password']);
         $admin = (isset($data['admin'])) ? 1 : 0;
+        $stmt->bindParam(":username", $username);
         $stmt->bindParam(":email", $email);
-        $stmt->bindParam(":password", $password);
-        $stmt->bindParam(":admin", $admin);
+        $stmt->bindParam(":hash", $hash);
+        $stmt->bindParam(":nom", $nom);
+        $stmt->bindParam(":prenom", $prenom);
+        $stmt->bindParam(":date_naissance", $dateNaissance);
+        $stmt->bindParam(":num_telephone", $numTel);
+        $stmt->bindParam(":adresse_postale", $adressePostale);
+        $stmt->bindParam(":code_postal", $codePostal);
+        $stmt->bindParam(":ville", $ville);
+        $stmt->bindParam(":date_inscription", $dateInscription);
+        $stmt->bindParam(":token", $token);
+        $stmt->bindParam(":date_validite_token", $dateValiditéToken);
+        $stmt->bindParam(":solde_cagnotte", $soldeCagnotte);
         $stmt->execute();
     }
     function remove_user($id) {
         $connexion = db();
-        $query = "DELETE FROM user WHERE id=" . $id;
+        $query = "DELETE FROM membres WHERE id=" . $id;
 
         $stmt = $connexion->prepare($query);
         $stmt->execute();
     }
     function find_user_by_email_and_password($data){
         $connexion = db();
-        $query = "SELECT * FROM user WHERE email='" . $data['email'] ."'";
+        $query = "SELECT * FROM membres WHERE email='" . $data['email'] ."'";
 	    $stmt = $connexion->prepare($query);
 	    $stmt->execute();		
         

@@ -2,7 +2,7 @@
 require_once 'functions.php';
 
 // L'ID est-il dans les paramètres d'URL?
-if (isset($_GET['id'])) {
+if (isset($_GET['id_membre'])) {
 
     // Récupérer $id depuis l'URL
     $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);

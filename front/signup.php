@@ -1,3 +1,6 @@
+
+
+
 <div class="main">  	
 	<input type="checkbox" id="chk" aria-hidden="true">
 	<div class="signup">
@@ -19,4 +22,6 @@
 			<button>Enregistrement</button>
 		</form>
 	</div>
+
+
 

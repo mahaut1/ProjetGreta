@@ -32,10 +32,10 @@
             <a class="nav-link" href="#">Catégories</a>
           </li>
 		  <li class="nav-item">
-            <a class="nav-link" href="#">se connecter</a>
+            <a class="nav-link" href="http://localhost/ProjetGreta/front/login.php">se connecter</a>
           </li>
 		  <li class="nav-item">
-            <a class="nav-link" href="/front/signup.php">S'inscrire</a>
+            <a class="nav-link" href="http://localhost/ProjetGreta/front/signup.php">S'inscrire</a>
           </li>
         
         </ul>
@@ -46,45 +46,46 @@
     </div>
   </nav>
 <div class="main">
-<input type="chekbox" id="signup" aria-hidden="true">	
+
 	<div class="signup">
 	<form method="POST" action="/data/users.csv">
-	<div class="mb-3">
+			<div class="form-group">
+				<div class="col-md-6">
 			<label for="Username" class="form-label">username</label>
 			<input type="text" name="username" placeholder="username" required="">
 			</div>
-			<div class="mb-3">
+			<div class="col-md-6">
 			<label for="email" class="form-label">Votre email</label>
 			<input type="text" name="nom" placeholder="email" required="">
 			</div>
-			<div class="mb-3">
+			<div class="col-md-6">
 			<label for="Nom" class="form-label">Votre Nom</label>
 			<input type="text" name="nom" placeholder="Nom" required="">
 			</div>
-			<div class="mb-3">
+			<div class="col-md-6">
 			<label for="Prénom" class="form-label">Votre Prénom</label>
 			<input type="text" name="prénom" placeholder="prénom" required="">
 			</div>
-			<div class="mb-3">
+			<div class="col-md-6">
 			<label for="Téléphone" class="form-label">Votre numero de téléphone</label>
 			<input type="tel" name="telephone" placeholder="telephone">
 			</div>
-			<div class="mb-3">
+			<div class="col-md-6">
 			<label for="Date_naissance" class="form-label">Votre date de naissance</label>
 			<input type="date" name="date_naissance" placeholder="Votre date de naissance">
 			</div>
-			<div class="mb-3">
+			<div class="col-md-6">
 			<label for="Adresse_postale" class="form-label">Votre adresse postale</label>
 			<input type="text" name="adresse_postale" placeholder="Votre adresse potale">
 			</div>
-			<div class="mb-3">
+			<div class="col-md-6">
 			<label for="Code_postal" class="form-label">Votre code postal</label>
 			<input type="text" name="code_postal" placeholder="Votre code postale">
 			</div>
-			<div class="mb-3">
+			<div class="col-md-6">
 			<label for="Date_naissance" class="form-label">Votre date de naissance</label>
 			<input type="date" name="date_naissance" placeholder="Votre date de naissance">
 			</div>
-			<div class="mb-3">
+			<div class="col-md-6">
 		
 </form>

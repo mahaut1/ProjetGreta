@@ -67,7 +67,7 @@
             $perim=time()+1200;// avec une date de péremption (20 minutes)
             try {
                 $db = connect();
-                $query=$db->prepare('UPDATE users SET token = :token, perim = :perim WHERE email = :email');// J'update l'utilisateur avec le nvx token et la date de peremption
+                $query=$db->prepare('UPDATE membres SET token = :token, perim = :perim WHERE email = :email');// J'update l'utilisateur avec le nvx token et la date de peremption
                 $query->execute(['email'=> $email, 'perim'=> $perim , 'token'=> $token]);// j'execute avec l'email le perim et le token
                 if ($query->rowCount()){
                     $content="<p><a href='authentification.test?p=reset&t=$token'>Merci de cliquer sur ce lien pour réinitialiser votre mot de passe</a></p>";// Je prépare le mail avec le token en paramètre d'url

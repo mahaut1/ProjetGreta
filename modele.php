@@ -1,17 +1,10 @@
 <?php
     include_once "config.php";
 
-    function upload_file($file) {
-        $uploadDir = __DIR__ . '/uploads/';
-        $uploadFilename = $uploadDir . basename($file['file']['name']);
-        
-        move_uploaded_file($_FILES['file']['tmp_name'], $uploadFilename);
-
-        return basename($file['file']['name']);
-    }
+   
     function get_annonce_by_category($nomCategorie) {
         $connexion = db();
-        $query = "SELECT * FROM annonces WHERE category=" . $id;
+        $query = "SELECT * FROM annonces WHERE categorie=" . $id;
 	    $stmt = $connexion->prepare($query);
 	    $stmt->execute();		
         
@@ -73,14 +66,14 @@
 
 	    return $categories; 
     }
-    function set_category($data) {
+    function set_categorie($data) {
         $connexion = db();
         $query = "INSERT INTO categorie SET nom_categorie=:nom_categorie, description=:description";   
         $stmt = $connexion->prepare($query);
         $stmt->bindParam(":nom_categorie", $data['nom_categorie']);
         $stmt->execute();
     }
-    function remove_category($id) {
+    function remove_categorie($id) {
         $connexion = db();
         $query = "DELETE FROM category WHERE id=" . $id;
 

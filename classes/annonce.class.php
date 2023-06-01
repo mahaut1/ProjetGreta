@@ -1,5 +1,5 @@
 <?php
-class Anonce{
+class Annonce{
 protected $date_creation;
 protected $titre;
 protected $description;
@@ -15,13 +15,15 @@ protected $auteur;
 protected $file;
 protected $filename;
 
-public function __construct($date_creation, $titre,$description,$prix_vente,$id_etats,$auteur){
+public function __construct($date_creation, $titre,$description,$prix_vente,$id_etats,$auteur,$file,$filename){
     $this->date_creation=$date_creation;
     $this->titre=$titre;
     $this->description=$description;
     $this->prix_vente=$prix_vente;
     $this->id_etats=$id_etats;
     $this->auteur=$auteur;
+    $this->file=$file;
+    $this->filename=$filename;
 }
 
 public function setDateCreation($date_creation){
@@ -72,6 +74,42 @@ public function getAuteur(){
     return $this->auteur;
 }
 
+public function setFile($file){
+    $this->file=$file;
+}
+
+function db() {
+        $connexion = null;
+        $host = 'localhost';
+        $db_name = 'Projet_annonces';
+        $username = 'root';
+        $password = '';
+        try{
+            $connexion = new PDO("mysql:host=" . $host . ";dbname=" . $db_name, $username, $password);
+            $connexion->exec("set names utf8");
+        }catch(PDOException $exception){
+            echo "Connection error: " . $exception->getMessage();
+        }
+
+        return $connexion;
+    }
+
+  function getAnnonce() {
+        try {
+            // Récupération de l'objet PDO
+            $db = connect();
+    
+            // Requête pour récupérer toutes les annonces
+            $annoncesQuery=$db->query('SELECT * FROM annonces');
+    
+            // Renvoie tous les lignes
+            return $annoncesQuery->fetchAll(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+            // En cas d'erreur afficher le message
+            echo $e->getMessage();
+        }
+        }
+
 function get_annonce_by_category($nomCategorie) {
     $connexion = db();
     $query = "SELECT * FROM annonces WHERE categorie=" . $id;
@@ -92,6 +130,7 @@ function get_annonces_by_id($id_annonce) {
 
     return $products; 
 }
+
 function get_annonces() {
     $connexion = db();
     $query = "SELECT * FROM annonces";
@@ -102,6 +141,7 @@ function get_annonces() {
 
     return $products; 
 }
+
 function set_anonces() {
     $connexion = db();
     $query = "INSERT INTO annonces SET date_creation=:date_creation, titre=:titre, description=:description,  prix_vente=:prix_vente,  id_etat=:id_etat, id_utilisateur=:id_utilisateur, files=:files, filename=:filename";
@@ -113,8 +153,6 @@ function set_anonces() {
     $stmt->bindParam(":prix_vente", $data['prix_vente']);
     $stmt->bindParam(":id_etat", $data['id_etat']);
     $stmt->bindParam(":id_utilisateur", $data['id_utilisateur']);
-    
-
     $filename = upload_file($files);
     $stmt->bindParam(":filename", $filename);
     

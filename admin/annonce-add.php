@@ -2,7 +2,7 @@
     <div class="container">
 
         <div class="row">
-            <h1>Ajouter un produit</h1>
+            <h1>Ajouter une annonce</h1>
             <div class="col-lg-12">
                 <form method="POST" name="product" action="" enctype="multipart/form-data">
                     <div class="form-group">

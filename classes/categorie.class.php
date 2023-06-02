@@ -5,7 +5,7 @@ class Categorie{
 
 public function __construct($nom_categorie,$description){
     $this->nom_categorie=$nom_categorie;
-    $this->description=$description
+    $this->description=$description;
 }
 
 public function setNomCategorie($nom_categorie){
@@ -33,4 +33,5 @@ function get_annonce_by_category($nomCategorie) {
     $annonces = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     return $products; 
+}
 }

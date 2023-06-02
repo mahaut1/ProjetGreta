@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="./assets/img/favicon.ico">
 
-    <title>Two Trees Olive Oils - Two Trees Olive Oils</title>
+    <title>Site de petites annonces </title>
 
     <base href="http://localhost:8888/">
 
@@ -28,8 +28,8 @@
                     <h4 class="text-white">Admin</h4>
                     <?php if (isset($_SESSION['logged'])) { echo "<p>" . $_SESSION['email'] . "</p>"; } ?>
                     <ul class="list-unstyled">
-                        <li><a href="index.php/admin/products" class="text-white">Produits</a></li>
-                        <li><a href="index.php/admin/users" class="text-white">Utilisateurs</a></li>
+                        <li><a href="index.php/admin/products" class="text-white">Annonce</a></li>
+                        <li><a href="index.php/admin/users" class="text-white">Membres</a></li>
                         <li><a href="index.php/admin/admins" class="text-white">Administrateurs</a></li>
                         <li><a href="index.php/admin/categories" class="text-white">Catégories</a></li>
                     </ul>

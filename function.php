@@ -2,7 +2,7 @@
     function db() {
         $connexion = null;
         $host = 'localhost';
-        $db_name = 'Projet_annonces';
+        $db_name = 'projet_annonces';
         $username = 'root';
         $password = '';
         try{
@@ -15,7 +15,7 @@
         return $connexion;
     }
 
-    function getAnnonce() {
+    function getAnnonces() {
         try {
             // Récupération de l'objet PDO
             $db = connect();
@@ -30,6 +30,33 @@
             echo $e->getMessage();
         }
     }
+
+function getAnnoncesByCategorie($nomCategorie){
+        try {
+            $db=connect();
+            $query=$db->prepare('SELECT * FROM annonces WHERE nom_categorie= :nom_categorie');
+            return $query->fetchAll(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+    }
+
+    function getAnnonceById($id_annonce){
+        try {
+            $db = connect();
+            $query=$db->prepare('SELECT * FROM annonces where id_annonce= :id_annonce');
+            $query->execute(['id_annonce'=>$id_annonce]);
+            if ($query->rowCount()){
+                return $query->fetch();
+            }
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+        return false;
+    }
+
+    
+
     function resetPwd() { $token=htmlspecialchars($_POST['token']);
         $user=getUserByToken($token);
         if($user){
@@ -122,8 +149,8 @@ function getUserByToken($token) {
 function getUserById($id) {
     try {
         $db = connect();
-        $query=$db->prepare('SELECT * FROM membres WHERE id= :id');
-        $query->execute(['id'=>$id]);
+        $query=$db->prepare('SELECT * FROM membres WHERE id_membre= :id_membre');
+        $query->execute(['id_membre'=>$id_membre]);
         if ($query->rowCount()){
             // Renvoie toutes les infos de l'utilisateur
             return $query->fetch();
@@ -133,6 +160,8 @@ function getUserById($id) {
     } 
     return false;
 }
+
+
 
 function addUser() {
     $email=filter_var(filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL), FILTER_VALIDATE_EMAIL);//on filtre l'email, on sanitize et on validate
@@ -198,4 +227,36 @@ function activUser() {
         }else return array("error", "Ce compte est déjà actif");
     }else return array("error", "Lien invalide !");
 }
+
+function removeUser($id_membre) {
+        $db=connect();
+        $query=$db->prepare('DELETE * FROM membres WHERE id_membre= :id_membre');
+        $query->execute(['id_membre'=>$id_membre]);     
+   } 
+
+
+function removeCategorie($id_categorie){
+    $db=connect();
+    $query=$db->prepare('DELETE * FROM categories WHERE id_categorie= :id_categorie');
+    $query->execute(['id_categorie'=>$id_categorie]);
+}
+
+function removeAnnonce($id_annonce){
+    $db=connect();
+    $query=$db->prepare('DELETE * FROM annonces WHERE id_annonce= :id_annonce');
+    $query->execute(['id_annonce'=>$id_annonce]);
+}
+
+function getCategories(){
+   try {
+        $connexion=connect();
+    $query=$db->prepare('SELECT * FROM categories');
+    return $query->fetchall(PDO::FETCH_ASSOC);
+   } catch (Exception $e) {
+    echo $e->getMessage();
+   }
+
+
+}
+
 ?>

@@ -12,7 +12,7 @@ if (isset($_GET['id_membre'])) {
         $db = connect();
 
         // Préparation de la requête pour supprimer le membre correspondant à l'id
-        $deleteMemberStmt = $db->prepare('DELETE FROM members WHERE id=:id');
+        $deleteMemberStmt = $db->prepare('DELETE FROM membres WHERE id=:id');
         // Execution de la requête
         $deleteMemberStmt->execute(['id' => $id]);
     
@@ -37,7 +37,7 @@ if (isset($_GET['id_membre'])) {
     $db = null;
 
     // Redirection vers la page principale des membres en passant le message et son type en variables GET
-    header('location:' . 'members.php?type=' . $type . '&message=' . $message);
+    header('location:' . 'membres.php?type=' . $type . '&message=' . $message);
 } else {
     //Redirection vers l'Accueil s'il n'y a pas d'ID membre 
     header('location:'. 'index.php');

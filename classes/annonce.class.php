@@ -38,17 +38,17 @@ public function setTitre($titre){
     $this->titre=$titre;
 }
 
-public function getTitre(){
-    return $this->titre;
-}
+/* public function getTitre(){
+    return $this->titre
+} */
 
 public function setDescription($description){
     $this->description=$description;
 }
 
-public function getDescription(){
+/* public function getDescription(){
     return $this->description;
-}
+} */
 
 public function setPrixVente($prix_vente){
     $this->prix_vente=$prix_vente;
@@ -81,7 +81,7 @@ public function setFile($file){
 function db() {
         $connexion = null;
         $host = 'localhost';
-        $db_name = 'Projet_annonces';
+        $db_name = 'projet_annonces';
         $username = 'root';
         $password = '';
         try{

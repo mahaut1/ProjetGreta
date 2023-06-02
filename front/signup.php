@@ -45,47 +45,42 @@
       </div>
     </div>
   </nav>
-<div class="main">
 
+<div class="main">  	
+	<input type="checkbox" id="chk" aria-hidden="true">
 	<div class="signup">
-	<form method="POST" action="/data/users.csv">
-			<div class="form-group">
-				<div class="col-md-6">
-			<label for="Username" class="form-label">username</label>
-			<input type="text" name="username" placeholder="username" required="">
-			</div>
-			<div class="col-md-6">
-			<label for="email" class="form-label">Votre email</label>
-			<input type="text" name="nom" placeholder="email" required="">
-			</div>
-			<div class="col-md-6">
-			<label for="Nom" class="form-label">Votre Nom</label>
+		<form method="POST" action="" enctype="multipart/form-data">
+			<label for="chk" aria-hidden="true">Enregistrement</label>
+			<input type="hidden" name="action" value="signup">
 			<input type="text" name="nom" placeholder="Nom" required="">
-			</div>
-			<div class="col-md-6">
-			<label for="Prénom" class="form-label">Votre Prénom</label>
-			<input type="text" name="prénom" placeholder="prénom" required="">
-			</div>
-			<div class="col-md-6">
-			<label for="Téléphone" class="form-label">Votre numero de téléphone</label>
-			<input type="tel" name="telephone" placeholder="telephone">
-			</div>
-			<div class="col-md-6">
-			<label for="Date_naissance" class="form-label">Votre date de naissance</label>
-			<input type="date" name="date_naissance" placeholder="Votre date de naissance">
-			</div>
-			<div class="col-md-6">
-			<label for="Adresse_postale" class="form-label">Votre adresse postale</label>
-			<input type="text" name="adresse_postale" placeholder="Votre adresse potale">
-			</div>
-			<div class="col-md-6">
-			<label for="Code_postal" class="form-label">Votre code postal</label>
-			<input type="text" name="code_postal" placeholder="Votre code postale">
-			</div>
-			<div class="col-md-6">
-			<label for="Date_naissance" class="form-label">Votre date de naissance</label>
-			<input type="date" name="date_naissance" placeholder="Votre date de naissance">
-			</div>
-			<div class="col-md-6">
-		
-</form>
+			<input type="email" name="email" placeholder="Email" required="">
+			<input type="password" name="pwd" placeholder="Mot de passe" required="" pattern="^(?=.*\d)(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,}$" title="Le mot de passe doit comporter au moins 8 caractères dont au moins 1 chiffre, 1 minuscule, 1 majuscule et 1 caractères spécial">
+			<input type="password" name="pwd2" placeholder="Confirmation du mot de passe" required="">
+			<input type="file" name="avatar[]" accept="image/*" multiple>
+			<button>Enregistrement</button>
+		</form>
+	</div>
+  
+			
+<?php
+			function set_user($data) {
+        $connexion = db();
+        $query = "INSERT INTO membres SET  username=:username, email=:email, hash=:hash, nom=:nom, prenom=:prenom, date_naissance=:date_naissance, num_telephone=:num_telephone, adresse_postale=:adresse_postale, code_postal=:code_postal, ville=:ville, date_inscription=:date_inscription, token=:token, date_validité_token=:date_validité_token, solde_cagnotte=:solde_cagnotte";
+
+
+        $stmt = $connexion->prepare($query); 
+        $password = md5($data['password']);
+        $admin = (isset($data['admin'])) ? 1 : 0;
+        $stmt->bindParam(":username", $username);
+        $stmt->bindParam(":email", $email);
+        $stmt->bindParam(":hash", $hash);
+        $stmt->bindParam(":nom", $nom);
+        $stmt->bindParam(":prenom", $prenom);
+        $stmt->bindParam(":date_naissance", $dateNaissance);
+        $stmt->bindParam(":num_telephone", $numTel);
+        $stmt->bindParam(":adresse_postale", $adressePostale);
+        $stmt->bindParam(":code_postal", $codePostal);
+        $stmt->bindParam(":ville", $ville);
+        $stmt->bindParam(":solde_cagnotte", $soldeCagnotte);
+        $stmt->execute();
+    }

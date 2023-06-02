@@ -10,6 +10,8 @@ protected $num_telephone;
 protected $ville;
 protected $annonces=[];
 
-    public function
+    public function __construct($username,$email,$nom,$prenom){
+        
+    }
 
 }

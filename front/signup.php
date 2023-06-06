@@ -29,7 +29,7 @@
             <a class="nav-link" href="#">Annonces</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Catégories</a>
+            <a class="nav-link" href="http://localhost/ProjetGreta/front/categories.php">Catégories</a>
           </li>
         
           <li class="nav-item">
@@ -54,7 +54,6 @@
   </nav>
 
 <div class="main">  	
-	<input type="checkbox" id="chk" aria-hidden="true">
 	<div class="signup">
 		<form method="POST" action="" enctype="multipart/form-data">
 			<label for="chk" aria-hidden="true">Enregistrement</label>

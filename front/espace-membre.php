@@ -1,9 +1,10 @@
+
 <!doctype html>
 <html lang="fr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Site de petites annonces</title>
+    <title>site de petites annonces</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   </head>
   <body>
@@ -23,19 +24,25 @@
             <a class="nav-link active" aria-current="page" href="http://localhost/ProjetGreta/index.html">Accueil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Membres</a>
+            <a class="nav-link" href="http://localhost/ProjetGreta/front/espace-membre.php">Membres</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Annonces</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="http://localhost/ProjetGreta/front/FormulaireCreaAnnonce.php">Créer une annonce</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="http://localhost/ProjetGreta/front/categories.php">Catégories</a>
           </li>
-		  <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link" href="http://localhost/ProjetGreta/front/login.php">se connecter</a>
           </li>
 		  <li class="nav-item">
             <a class="nav-link" href="http://localhost/ProjetGreta/front/signup.php">S'inscrire</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost/ProjetGreta/front/contact.php">Nous contacter</a>
           </li>
         
         </ul>
@@ -46,25 +53,26 @@
     </div>
   </nav>
 
-        <div class="row">
+  <div class="card mb-3" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"> Mes annonces</h5>
+    <p class="card-text">Retrouvez ici l'ensemble de vos annonces.</p>
+    <a href="#" class="btn btn-primary">Mes annonces</a>
+  </div>
+</div>
 
-            <?php foreach ($annonces as $a) { ?>
-                <div class="col-md-4">
-                    <div class="card mb-4 box-shadow">
-                        <img class="card-img-top" src="./uploads/<?= $p['filename']; ?>">
-                        <div class="card-body">
-                            <p class="card-text"><?= $p['name']; ?></p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <a href="/index.php/product?id=<?= $p['id']; ?>" class="btn btn-sm btn-outline-secondary">Voir</a>
-                                </div>
-                                <small class="text-muted"><?= $p['price']; ?>€</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <?php } ?>
+<div class="card mb-3" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Ma cagnotte </h5>
+    <p class="card-text">Vérifier le montant de votre cagnotte et la recharger si vous le souhaitez.</p>
+    <a href="#" class="btn btn-primary">Ma cagnotte</a>
+  </div>
+</div>
 
-        </div>
-    </div>
+<div class="card mb-3" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">modifier mon annonce </h5>
+    <p class="card-text">Modifier les annonces que vous avez passé..</p>
+    <a href="#" class="btn btn-primary">Modifier mon annonce</a>
+  </div>
 </div>

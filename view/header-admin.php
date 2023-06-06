@@ -21,16 +21,19 @@
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="http://localhost/ProjetGreta/index.html">Accueil</a>
+            <a class="nav-link active" aria-current="page" href="http://localhost/ProjetGreta/index.php">Accueil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Membres</a>
+            <a class="nav-link" href="http://localhost/ProjetGreta/admin/users.php">Membres</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Annonces</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Catégories</a>
+            <a class="nav-link" href="http://localhost/ProjetGreta/admin/categorie-add.php">Ajouter une Catégorie</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost/ProjetGreta/admin/categories.php">Catégorie</a>
           </li>
 
         

@@ -23,9 +23,9 @@
                     </div>
                     <div class="form-group">
                         <label for="category">categories</label>
-                        <select class="form-control" name="category">
+                        <select class="form-control" name="categories">
                             <?php foreach ($categories as $c) { 
-                                    echo "<option value=" .  $c['id'] . ">". $c['name'] . "</option>";
+                                    echo "<option value=" .  $c['id_categorie'] . ">". $c['nom_categorie'] . "</option>";
                                 } 
                             ?>
                         </select>

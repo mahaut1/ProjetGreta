@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="fr">
   <head>
@@ -29,13 +30,12 @@
             <a class="nav-link" href="#">Annonces</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Catégories</a>
-          </li>
-        
-          <li class="nav-item">
             <a class="nav-link" href="http://localhost/ProjetGreta/front/FormulaireCreaAnnonce.php">Créer une annonce</a>
           </li>
-		  <li class="nav-item">
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost/ProjetGreta/front/categories.php">Catégories</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="http://localhost/ProjetGreta/front/login.php">se connecter</a>
           </li>
 		  <li class="nav-item">
@@ -53,36 +53,23 @@
     </div>
   </nav>
 
-<div class="main">  	
-	<input type="checkbox" id="chk" aria-hidden="true">
-	<div class="signup">
-		<form method="POST" action="" enctype="multipart/form-data">
-			<label for="chk" aria-hidden="true">Enregistrement</label>
-      <div class="mb-3">
-			<input type="hidden" name="action" value="signup">
-    </div>
-    <div class="mb-3">
-    <label for="nom" class="form-label">Votre nom</label>
-			<input type="text" class="form-control" name="nom" placeholder="Nom" required="">
-    </div>
-    <div class="mb-3">
-    <label for="email" class="form-label">Votre email</label>
-      <input type="email" class="form-control" name="email" placeholder="Email" required="">
-    </div>	
-    <div class="mb-3">
-    <label for="password" class="form-label">Votre mot de passe</label>
-      <input type="password" class="form-control" name="pwd" placeholder="Mot de passe" required="" pattern="^(?=.*\d)(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,}$" title="Le mot de passe doit comporter au moins 8 caractères dont au moins 1 chiffre, 1 minuscule, 1 majuscule et 1 caractères spécial">
-    </div>
-    <div class="mb-3">
-    <label for="password2" class="form-label">Confirmez votre mot de passe</label>
-      <input type="password" class="form-control" name="pwd2" placeholder="Confirmation du mot de passe" required="">
-    </div>	
-    <div class="mb-3">
-    <label for="avatar" class="form-label">Votre avatar</label>
-      <input type="file" class="form-control" name="avatar[]" accept="image/*" multiple>
-    </div>
-      <button>Enregistrement</button>
-		</form>
-	</div>
+
+<div class="Contact" action="">
+<form method="POST">
   
-			
+<label for="Contact" aria-hidden="true">Contactez-nous </label>
+
+<div class="mb-3">
+  <label for="nom" class="form-label">Votre nom</label>
+  <input type="text" class="form-control" name="nom" id="nom">
+</div>
+<div class="mb-3">
+  <label for="nom" class="form-label">Votre prénom</label>
+  <input type="text" class="form-control" name="prénom" id="prénom">
+</div>
+<div class="mb-3">
+  <label for="nom" class="form-label">Votre message</label>
+  <input type="textarea" class="form-control" name="message" id="message">
+</div>
+
+</form>

@@ -4,8 +4,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1>Utilisateurs</h1>
-                <a href="index.php/admin/user/add" class="btn btn-primary text-white">Ajouter</a>
-                <a href="index.php/admin/user/import" class="btn btn-primary text-white">Import</a>
+                <a href="http://localhost/ProjetGreta/admin/user/add" class="btn btn-primary text-white">Ajouter</a>
+                <a href="http://localhost/ProjetGreta/admin/user/import" class="btn btn-primary text-white">Import</a>
                 <table class="table">
                     <thead>
                     <tr>
@@ -15,12 +15,12 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <?php foreach ($users as $u) { ?>
+                    <?php foreach ($membres as $m) { ?>
                         <tr>
-                            <th scope="row"><?= $u['id'] ?></th>
-                            <td><?= $u['email'] ?></td>
+                            <th scope="row"><?= $m['id'] ?></th>
+                            <td><?= $m['email'] ?></td>
                             <td>
-                                <a class="btn btn-danger text-white" href="/index.php/admin/user/del?id=<?= $u['id'] ?>">Supprimer</a>
+                                <a class="btn btn-danger text-white" href="http://localhost/ProjetGreta/admin/user/del?id=<?= $u['id_membre'] ?>">Supprimer</a>
                             </td>
                         </tr>
                     <?php } ?>

@@ -1,25 +1,17 @@
-<!DOCTYPE html>
-<html lang="fr" >
-<head>
-  <meta charset="UTF-8">
-  <title>Authentification</title>
-  <link rel="stylesheet" href="asset/style.css">
-</head>
-<body>
-<?php if (!empty($message)) : ?>
-    <div class='row'>
-        <div class='alert alert-<?=$message[0]?>'>
-            <?= $message[1] ?>
-        </div>
-    </div>
-<?php endif; ?>
+
 <!doctype html>
 <html lang="fr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Site de petites annonces</title>
+    <base href="http://localhost/ProjetGreta/">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+     <!-- Bootstrap core CSS -->
+     <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="./assets/css/custom.css" rel="stylesheet">
   </head>
   <body>
     <h1>Site de petites annonces</h1>
@@ -35,7 +27,7 @@
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Accueil</a>
+            <a class="nav-link active" aria-current="page" href="http://localhost/ProjetGreta/index.html">Accueil</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Membres</a>
@@ -45,6 +37,19 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Catégories</a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost/ProjetGreta/front/FormulaireCreaAnnonce.php">Créer une annonce</a>
+          </li>
+		  <li class="nav-item">
+            <a class="nav-link" href="http://localhost/ProjetGreta/front/login.php">se connecter</a>
+          </li>
+		  <li class="nav-item">
+            <a class="nav-link" href="http://localhost/ProjetGreta/front/signup.php">S'inscrire</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost/ProjetGreta/front/contact.php">Nous contacter</a>
           </li>
         
         </ul>

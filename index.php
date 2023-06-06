@@ -49,7 +49,10 @@ switch ($p) {
 		include "view/reset.php";	
 		break;	
 	case 'signup':
-		include "view/signup.php";	
+		include "front/signup.php";	
+		break;
+	case 'se connecter':
+		include "front/login.php";
 		break;
 	default:
 		include "view/home.php";	

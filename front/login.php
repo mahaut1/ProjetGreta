@@ -29,13 +29,19 @@
             <a class="nav-link" href="#">Annonces</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Catégories</a>
+            <a class="nav-link" href="http://localhost/ProjetGreta/front/FormulaireCreaAnnonce.php">Créer une annonce</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost/projetGreta/front/categories.php">Catégories</a>
           </li>
 		  <li class="nav-item">
             <a class="nav-link" href="http://localhost/ProjetGreta/front/login.php">se connecter</a>
           </li>
 		  <li class="nav-item">
             <a class="nav-link" href="http://localhost/ProjetGreta/front/signup.php">S'inscrire</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost/ProjetGreta/front/contact.php">Nous contacter</a>
           </li>
         
         </ul>
@@ -50,11 +56,19 @@
 	<div class="login">
 		<form method="POST" action="">
 
-			<label for="chk" aria-hidden="true">Login</label>
+			<label for="Login" aria-hidden="true">Login</label>
+      <div>
 			<input type="hidden" name="action" value="login">
-			<input type="email" name="email" placeholder="Email" required="">
-			<input type="password" name="pwd" placeholder="Mot de passe" required="">
-			<button>Login</button>
+      </div>
+      <div>
+      <label for="e-mail" class="form-label">Votre email</label>
+			<input type="email" class="form-control" name="email" placeholder="Email" required="">
+      </div>
+      <div>
+      <label for="pwd" class="form-label">Mot de passe</label>
+			<input type="password" class="form-control" name="pwd" placeholder="Mot de passe" required="">
+      </div>
+      <button>Login</button>
 			<a href="?p=forgot">Mot de passe oublié ?</a>
 		</form>
 	</div>

@@ -24,16 +24,16 @@
             <a class="nav-link active" aria-current="page" href="http://localhost/ProjetGreta/index.php">Accueil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Membres</a>
+            <a class="nav-link" href="http://localhost/ProjetGreta/admin/users.php">Membres</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Annonces</a>
+            <a class="nav-link" href="http://localhost/ProjetGreta/admin/products.php">Annonces</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost/ProjetGreta/admin/categorie-add.php">Ajouter une Catégorie</a>
+            <a class="nav-link" href="http://localhost/ProjetGreta/admin/categorie-add.php">Ajouter une catégorie</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/admin/categorie">supprimer une Catégorie</a>
+            <a class="nav-link" href="http://localhost/ProjetGreta/admin/categories.php">Catégorie</a>
           </li>
 
         

@@ -57,7 +57,9 @@
                     <label for="name">description</label>
                     <input type="text" name="name" class="form-control" id="name">
                 </div>
+                <div>
                 <button type="submit" class="btn btn-primary">Valider</button>
+                </div>
             </form>
         </div>
     </div>

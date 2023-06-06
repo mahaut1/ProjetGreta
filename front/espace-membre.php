@@ -64,7 +64,7 @@
 <div class="card mb-3" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">Ma cagnotte </h5>
-    <p class="card-text">Vérifier le montant de votre cagnotte et la recharger si vous le souhaitez.</p>
+    <p class="card-text">Vérifier le montant de votre cagnotte et rechargez-la si vous le souhaitez.</p>
     <a href="#" class="btn btn-primary">Ma cagnotte</a>
   </div>
 </div>

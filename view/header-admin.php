@@ -24,7 +24,7 @@
             <a class="nav-link active" aria-current="page" href="http://localhost/ProjetGreta/index.php">Accueil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost/ProjetGreta/admin/users.php">Membres</a>
+            <a class="nav-link" href="http://localhost/ProjetGreta/admin/users.php">Utilisateurs</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Annonces</a>

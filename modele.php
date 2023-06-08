@@ -1,19 +1,5 @@
 <?php
-    function db() {
-        $connexion = null;
-        $host = 'localhost';
-        $db_name = 'projet_annonces';
-        $username = 'root';
-        $password = '';
-        try{
-            $connexion = new PDO("mysql:host=" . $host . ";dbname=" . $db_name, $username, $password);
-            $connexion->exec("set names utf8");
-        }catch(PDOException $exception){
-            echo "Connection error: " . $exception->getMessage();
-        }
-
-        return $connexion;
-    }
+  include_once "config.php";
 
     function getAnnonces() {
         try {
@@ -113,6 +99,21 @@ function getAnnoncesByCategorie($nomCategorie){
         }else array("error", "Aucun compte ne correspond à cet email.");// S'il n'a pas réussi a trouver d'utilisateur avec cet email
     }
 
+function getUser(){
+    try {
+        $db = connect();
+        $query=$db->prepare('SELECT * FROM membres');
+        $query->execute(['email'=>$email]);
+        if ($query->rowCount()){
+            // Renvoie toutes les infos de l'utilisateur
+            return $query->fetch(); // fetch pour une seule ligne
+        }
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+    return false;
+}
+
     // Récupération d'un utilisateur à partir de son email
 function getUserByEmail($email) {
     try {
@@ -146,11 +147,26 @@ function getUserByToken($token) {
 }   
 
 // Récupération d'un utilisateur à partir d'un id
-function getUserById($id) {
+function getUserById($id_membre) {
     try {
         $db = connect();
         $query=$db->prepare('SELECT * FROM membres WHERE id_membre= :id_membre');
         $query->execute(['id_membre'=>$id_membre]);
+        if ($query->rowCount()){
+            // Renvoie toutes les infos de l'utilisateur
+            return $query->fetch();
+        }
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    } 
+    return false;
+}
+
+function getProductById($id_annonce) {
+    try {
+        $db = connect();
+        $query=$db->prepare('SELECT * FROM annonces WHERE id_annonce= :id_annonce');
+        $query->execute(['id_annonce'=>$id_annonce]);
         if ($query->rowCount()){
             // Renvoie toutes les infos de l'utilisateur
             return $query->fetch();

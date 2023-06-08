@@ -5,13 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Site de petites annonces</title>
-    <base href="http://localhost/ProjetGreta/">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-     <!-- Bootstrap core CSS -->
-     <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Custom styles for this template -->
-<link href="./assets/css/custom.css" rel="stylesheet">
   </head>
   <body>
     <h1>Site de petites annonces</h1>
@@ -30,19 +24,18 @@
             <a class="nav-link active" aria-current="page" href="http://localhost/ProjetGreta/index.html">Accueil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Membres</a>
+            <a class="nav-link" href="http://localhost/ProjetGreta/front/espace-membre.php">Membres</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Annonces</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Catégories</a>
-          </li>
-        
-          <li class="nav-item">
             <a class="nav-link" href="http://localhost/ProjetGreta/front/FormulaireCreaAnnonce.php">Créer une annonce</a>
           </li>
-		  <li class="nav-item">
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost/ProjetGreta/front/categories.php">Catégories</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="http://localhost/ProjetGreta/front/login.php">se connecter</a>
           </li>
 		  <li class="nav-item">

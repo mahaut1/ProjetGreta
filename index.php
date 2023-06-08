@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "modele/function.php";
+require_once "modele.php";
 
 
 $p= $_GET['p'] ?? "";
@@ -53,6 +53,12 @@ switch ($p) {
 		break;
 	case 'se connecter':
 		include "front/login.php";
+		break;
+	case 'ajouter une annonce':
+		include "front/FormulaireCreaAnnonce.php";
+		break;
+	case 'contact':
+		include "front/contact.php";
 		break;
 	default:
 		include "view/home.php";	

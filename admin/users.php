@@ -27,7 +27,7 @@
             <a class="nav-link" href="http://localhost/ProjetGreta/admin/users.php">Membres</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Annonces</a>
+            <a class="nav-link" href="http://localhost/ProjetGreta/admin/categories.php">Annonces</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="http://localhost/ProjetGreta/admin/categorie-add.php">Ajouter une Catégorie</a>

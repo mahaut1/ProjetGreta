@@ -19,6 +19,7 @@ function product($id)
 
 function logUser()
 {
+    $user=getUserByEmail();
     require_once 'front/login.php';
 }
 
@@ -34,8 +35,6 @@ function activUser()
         require_once 'front/register.php';
     }
 }
-
-
 
 function admin_index()
 {
@@ -57,7 +56,7 @@ function admin_products()
 
 function admin_users()
 {
-    $users = getUserById(0);
+    $users = getUsers(0);
     require_once 'admin/users.php';
 }
 function admin_product_add() 
@@ -74,7 +73,7 @@ function admin_product_add()
 function admin_category_add()
 {
     if (!empty($_POST)) {
-        set_category($_POST);
+        addCategorie($_POST);
         header('Location: /index.php/admin/categories');      
         exit();  
     } else {
@@ -158,4 +157,17 @@ function admin_user_import() {
         exit();
     }
     require_once 'admin/import.php';
+}
+
+function register()
+{
+    if (!empty($_POST)) {
+        $data = $_POST;
+        $data['admin'] = 0;
+        set_user($data);
+        header('Location: /index.php');      
+        exit();  
+    } else {
+        require_once 'front/register.php';
+    }
 }

@@ -30,9 +30,6 @@
             <a class="nav-link" href="#">Annonces</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost/ProjetGreta/admin/categorie-add.php">Ajouter une Catégorie</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="http://localhost/ProjetGreta/admin/categories.php">Catégorie</a>
           </li>
 

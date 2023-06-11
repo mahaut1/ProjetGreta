@@ -30,9 +30,6 @@
             <a class="nav-link" href="http://localhost/ProjetGreta/admin/products.php">Annonces</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost/ProjetGreta/admin/categorie-add.php">Ajouter une catégorie</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="http://localhost/ProjetGreta/admin/categories.php">Catégorie</a>
           </li>
 
@@ -49,8 +46,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1>Catégories</h1>
-                <a class="btn btn-primary text-white" href="/index.php/admin/category/add">Ajouter</a>
-                <a class="btn btn-primary text-white" href="/index.php/admin/categories/import">Import</a>
+                <a class="btn btn-primary text-white" href="http://localhost/ProjetGreta/admin/categorie-add.php">Ajouter</a>
+                <a class="btn btn-primary text-white" href="http://localhost/ProjetGreta/admin/import.php">Import</a>
                 <table class="table">
                     <thead>
                     <tr>

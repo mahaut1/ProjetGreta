@@ -99,7 +99,7 @@ function getAnnoncesByCategorie($nomCategorie){
         }else array("error", "Aucun compte ne correspond à cet email.");// S'il n'a pas réussi a trouver d'utilisateur avec cet email
     }
 
-function getUser(){
+function getUsers(){
     try {
         $db = connect();
         $query=$db->prepare('SELECT * FROM membres');
@@ -250,6 +250,13 @@ function removeUser($id_membre) {
         $query->execute(['id_membre'=>$id_membre]);     
    } 
 
+   function addCategorie(){
+ 
+        $db=connect();
+        $query = $db->prepare("INSERT INTO categories SET nom_categorie=:nom_categorie, description=:description");
+        $query->execute(['nom_categorie'=>$nomCategorie],['description'=>$description]);
+    }
+   
 
 function removeCategorie($id_categorie){
     $db=connect();

@@ -1,7 +1,7 @@
 <?php
 function index()
 {
-    $products = getAnnonces();
+    $annonces = getAnnonces();
     require_once 'front/index.php';
 }
 
@@ -17,24 +17,9 @@ function product($id)
     require_once 'front/product.php';
 }
 
-function logUser()
-{
-    $user=getUserByEmail();
-    require_once 'front/login.php';
-}
 
-function activUser()
-{
-    if (!empty($_POST)) {
-        $data = $_POST;
-        $data['admin'] = 0;
-        set_user($data);
-        header('Location: /index.php');      
-        exit();  
-    } else {
-        require_once 'front/register.php';
-    }
-}
+
+
 
 function admin_index()
 {
@@ -50,20 +35,20 @@ function admin_categories()
 
 function admin_products()
 {
-    $products = getAnnonces();
+    $annonces = getAnnonces();
     require_once 'admin/products.php';
 }
 
 function admin_users()
 {
-    $users = getUsers(0);
+    $membres = getUsers();
     require_once 'admin/users.php';
 }
 function admin_product_add() 
 {
     if (!empty($_POST)) {
         set_product($_POST, $_FILES);
-        header('Location: /index.php/admin/products');      
+        header('Location: /index.php/admin/annonces');      
         exit();  
     } else {
         $categories = getCategories();
@@ -87,7 +72,7 @@ function admin_category_del($id) {
 }
 function admin_remove_product($id) {
     removeAnnonce($id_annonce);
-    header('Location: /index.php/admin/products');      
+    header('Location: /index.php/admin/annonces');      
     exit();  
 }
 function admin_remove_user($id) {
@@ -104,22 +89,7 @@ function admin_user_add() {
         require_once 'admin/user_add.php';
     }
 }
-function try_login() {
-    $user = logUser($_POST);
-    if (!empty($user)) {
-        $_SESSION["logged"] = true;
-        $_SESSION["id"] = $user['id'];
-        $_SESSION["email"] = $user['email'];  
-        if ($user['admin'] == 1) {
-            header('Location: /index.php/admin');      
-        } else {
-            header('Location: /index.php');      
-        }
-        exit();  
-    } else {
-        require_once 'front/error.php';
-    }
-}
+
 function admin_categories_import() {
     if (!empty($_FILES)) {
         $file = $_FILES['file']['tmp_name'];

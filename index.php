@@ -7,10 +7,10 @@ require_once "controllers.php";
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 if (strpos($uri, "admin") !== false) {
-    include_once "_partials/header_admin.php";
+    include_once "view/header_admin.php";
 } else {
     $header_categories = getCategories();
-    include_once "_partials/header.php";
+    include_once "view/header.php";
 }
 
 ?>
@@ -105,18 +105,7 @@ elseif ('/index.php/admin/users' == $uri)
 {
     echo admin_users();
 }
-elseif ('/index.php/panier/add' == $uri && isset($_GET['id']))
-{
-    echo add_panier($_GET['id']);
-}
-elseif ('/index.php/panier/del' == $uri && isset($_GET['id']))
-{
-    echo del_panier($_GET['id']);
-}
-else
-{
-    echo index();
-}
+
 ?>
 
-<?php include_once "_partials/footer.php"; ?>
+<?php include_once "view/footer.php"; ?>

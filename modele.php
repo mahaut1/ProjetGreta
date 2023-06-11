@@ -17,6 +17,15 @@
         }
     }
 
+    function upload_file($file) {
+        $uploadDir = __DIR__ . '/uploads/';
+        $uploadFilename = $uploadDir . basename($file['file']['name']);
+        
+        move_uploaded_file($_FILES['file']['tmp_name'], $uploadFilename);
+
+        return basename($file['file']['name']);
+    }
+
 function getAnnoncesByCategorie($nomCategorie){
         try {
             $db=connect();
@@ -272,7 +281,7 @@ function removeAnnonce($id_annonce){
 
 function getCategories(){
    try {
-        $connexion=connect();
+        $db=connect();
     $query=$db->prepare('SELECT * FROM categories');
     return $query->fetchall(PDO::FETCH_ASSOC);
    } catch (Exception $e) {

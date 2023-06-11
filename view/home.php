@@ -1,8 +1,10 @@
-
+<?php
+include_once "../view/header.php";
+?>
 
     <div class="card-group">
       <div class="card">
-        <img src="asset/images/oeufVerre.JPG" class="card-img-top" alt="oeuf en verre">
+        <img src="../asset/images/oeufVerre.JPG" class="card-img-top" alt="oeuf en verre">
         <div class="card-body">
           <h5 class="card-title">Oeuf d'un artiste verrier</h5>
         <p class="card-text">Oeuf ayant nécéssité plus de 150 heures de travail</p>
@@ -15,7 +17,7 @@
         </div>
       </div>
       <div class="card">
-        <img src="asset/images/vase-sucre.JPG" class="card-img-top" alt="vase en sucre">
+        <img src="../asset/images/vase-sucre.JPG" class="card-img-top" alt="vase en sucre">
         <div class="card-body">
           <h5 class="card-title">Vase en sucre</h5>
         <p class="card-text">Travail du sucre</p>
@@ -28,7 +30,7 @@
         </div>
       </div>
       <div class="card">
-        <img src="asset/images/fleur-safran.JPG" class="card-img-top" alt="...">
+        <img src="../asset/images/fleur-safran.JPG" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Fleurs de safran</h5>
           <p class="card-text">contacter le vendeur pour plus d'informations!</p>

@@ -10,11 +10,11 @@ include_once "../view/header.php";
       <div>
 			<input type="hidden" name="action" value="login">
       </div>
-      <div>
+      <div class="form-group">
       <label for="e-mail" class="form-label">Votre email</label>
 			<input type="email" class="form-control" name="email" placeholder="Email" required="">
       </div>
-      <div>
+      <div  class="form-group">
       <label for="pwd" class="form-label">Mot de passe</label>
 			<input type="password" class="form-control" name="pwd" placeholder="Mot de passe" required="">
       </div>

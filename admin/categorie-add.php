@@ -8,11 +8,11 @@ include_once "../view/header-admin.php";
             <form method="POST" name="category" action="">
                 <div class="form-group">
                     <label for="name">nom</label>
-                    <input type="text" name="name" class="form-control" id="name">
+                    <input type="text" name="nom_categorie" class="form-control" id="nom_categorie">
                 </div>
                 <div class="form-group">
                     <label for="name">description</label>
-                    <input type="text" name="name" class="form-control" id="name">
+                    <input type="text" name="description" class="form-control" id="description">
                 </div>
                 <div>
                 <button type="submit" class="btn btn-primary">Valider</button>

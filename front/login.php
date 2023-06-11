@@ -18,7 +18,7 @@ include_once "../view/header.php";
       <label for="pwd" class="form-label">Mot de passe</label>
 			<input type="password" class="form-control" name="pwd" placeholder="Mot de passe" required="">
       </div>
-      <button>Login</button>
+      <button type="submit" class="btn btn-primary">Valider</button>
 			<a href="?p=forgot">Mot de passe oublié ?</a>
 		</form>
 	</div>

@@ -8,17 +8,17 @@ include_once "../view/header.php";
         <div class="row">
 
             <div class="col-lg-4">
-                <img class="card-img-top" src="./uploads/<?= $product['filename']; ?>">
+                <img class="card-img-top" src="./uploads/<?= $annonce['filename']; ?>">
             </div>
 
             <div class="col-lg-8">
-                <h1><?= $product['name']; ?> <a href="/index.php/panier/add?id=<?= $product['id']; ?>" class="btn btn-primary m-3 text-white">Ajouter au panier</a></h1>
+                <h1><?= $annonce['name']; ?> <a href="/index.php/panier/add?id=<?= $annonce['id']; ?>" class="btn btn-primary m-3 text-white">Ajouter au panier</a></h1>
 
                 <p>
-                    Prix : <?= $product['price']; ?>€
+                    Prix : <?= $annonce['price']; ?>€
                 </p>
                 <p>
-                    <?= $product['description']; ?>
+                    <?= $annonce['description']; ?>
                 </p>
             </div>
         </div>

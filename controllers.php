@@ -47,7 +47,7 @@ function admin_users()
 function admin_product_add() 
 {
     if (!empty($_POST)) {
-        set_product($_POST, $_FILES);
+        addAnnonce($_POST, $_FILES);
         header('Location: /index.php/admin/annonces');      
         exit();  
     } else {
@@ -58,7 +58,7 @@ function admin_product_add()
 function admin_category_add()
 {
     if (!empty($_POST)) {
-        addCategorie($_POST);
+        addCategorie();
         header('Location: /index.php/admin/categories');      
         exit();  
     } else {

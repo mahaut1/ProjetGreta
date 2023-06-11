@@ -19,5 +19,5 @@ include_once "../view/header.php";
   <label for="nom" class="form-label">Votre message</label>
   <input type="textarea" class="form-control" name="message" id="message">
 </div>
-
+<button type="submit" class="btn btn-primary">Valider</button>
 </form>

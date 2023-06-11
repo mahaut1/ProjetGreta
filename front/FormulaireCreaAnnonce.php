@@ -25,5 +25,6 @@ include_once "../view/header.php";
   <label for="Prix_vente" class="form-label">Prix de vente</label>
   <input type="textarea" class="form-control" name="Date de création" id="Date de création">
 </div>
+<button type="submit" class="btn btn-primary">Valider</button>
 
 </form>

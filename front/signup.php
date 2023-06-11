@@ -29,7 +29,7 @@ include_once "../view/header.php";
     <label for="avatar" class="form-label">Votre avatar</label>
       <input type="file" class="form-control" name="avatar[]" accept="image/*" multiple>
     </div>
-      <button>Enregistrement</button>
+    <button type="submit" class="btn btn-primary">Valider</button>
 		</form>
 	</div>
   

@@ -2,6 +2,7 @@
 session_start();
 require_once "modele.php";
 require_once "controllers.php";
+require_once "config.php";
 
 
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
